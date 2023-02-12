@@ -10,7 +10,6 @@ pipeline {
                 
             }
         }
-    stages {
         stage('version') {
             steps {
                 echo "Building.."
