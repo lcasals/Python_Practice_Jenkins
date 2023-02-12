@@ -8,12 +8,6 @@ pipeline {
                 
             }
         }
-       stage('version2') {
-            steps {
-                echo "Building.."
-                sh 'pip --version'
-            }
-        }
         stage('Build') {
             steps {
                 echo "Building.."
