@@ -8,6 +8,13 @@ pipeline {
                 
             }
         }
+       stage('version') {
+            steps {
+                echo "Building.."
+                sh 'pip install PyPDF2'
+                
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
