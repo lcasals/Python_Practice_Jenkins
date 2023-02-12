@@ -11,6 +11,7 @@ pipeline {
        stage('version2') {
             steps {
                 echo "Building.."
+                cd myapp
                 pip install -r requirements.txt
             }
         }
@@ -18,7 +19,7 @@ pipeline {
             steps {
                 echo "Building.."
                 echo "doing build stuff.."
-                sh 'python3 helloworld.py'
+                sh 'python3 hello.py'
                 
             }
         }
