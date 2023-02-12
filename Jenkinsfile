@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo "Building.."
                 echo "doing build stuff.."
-                python3 ./helloworld.py
+                sh 'python3 helloworld.py'
                 
             }
         }
