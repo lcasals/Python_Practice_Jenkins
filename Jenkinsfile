@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo "Building.."
                 echo "doing build stuff.."
+                pip install PyPDF2
                 
             }
         }
