@@ -1,6 +1,17 @@
 pipeline {
-   agent any
+   agent none
     stages {
+       stage('Build') { 
+            agent {
+                docker {
+                    image 'python:2-alpine' 
+                }
+            }
+            steps {
+                sh 'python -m py_compile sources/add2vals.py sources/calc.py' 
+                stash(name: 'compiled-results', includes: 'sources/*.py*') 
+            }
+        }
         stage('version') {
             steps {
                 echo "Building.."
@@ -12,7 +23,6 @@ pipeline {
             steps {
                 echo "Building.."
                 echo "doing build stuff.."
-                sh'sudo apt-get install python3-pypdf2'
                 sh 'python3 helloworld.py'
                 
             }
