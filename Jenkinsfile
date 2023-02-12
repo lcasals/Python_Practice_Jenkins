@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo "Building.."
                 echo "doing build stuff.."
+                sh'sudo apt-get install python3-pypdf2'
                 sh 'python3 helloworld.py'
                 
             }
