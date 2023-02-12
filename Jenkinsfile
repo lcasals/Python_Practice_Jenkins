@@ -1,15 +1,10 @@
 pipeline {
-    agent {
-        docker { image 'node:16-alpine' }
-    }
-    stages {
-        stage('node') {
-            steps {
-                echo "Building.."
-                sh 'node --version'
-                
+    aagent { 
+        node {
+            label 'docker-agent-python'
             }
-        }
+      }
+    stages {
         stage('version') {
             steps {
                 echo "Building.."
