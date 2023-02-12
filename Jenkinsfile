@@ -1,7 +1,5 @@
 pipeline {
-   agent {
-        docker { image 'python:3' }
-    }
+   agent any
     stages {
         stage('version') {
             steps {
@@ -20,7 +18,7 @@ pipeline {
             steps {
                 echo "Building.."
                 echo "doing build stuff.."
-                //sh 'python3 hello.py'
+                sh 'python3 hello.py'
                 
             }
         }
