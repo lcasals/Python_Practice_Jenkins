@@ -1,5 +1,5 @@
 # importing required modules
-import PyPDF2
+#import PyPDF2
   
 # creating a pdf file object
 pdfFileObj = open('example.pdf', 'rb')
