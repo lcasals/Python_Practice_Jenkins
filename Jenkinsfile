@@ -1,15 +1,11 @@
 pipeline {
-    agent { 
-        node {
-            label 'docker-agent-python'
-            }
-      }
+    agent none
     stages {
         stage('Build') {
             steps {
                 echo "Building.."
                 echo "doing build stuff.."
-                sh 'python helloworld.py'
+                sh 'python3 helloworld.py'
                 
             }
         }
