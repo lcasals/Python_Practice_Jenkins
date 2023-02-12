@@ -1,5 +1,7 @@
 pipeline {
-   agent any
+   agent {
+        docker { image 'python:3' }
+    }
     stages {
         stage('version') {
             steps {
@@ -11,16 +13,14 @@ pipeline {
        stage('version2') {
             steps {
                 echo "Building.."
-                sh'''
-                pip install PyPDF2
-                '''
+                sh 'pip --version'
             }
         }
         stage('Build') {
             steps {
                 echo "Building.."
                 echo "doing build stuff.."
-                sh 'python3 hello.py'
+                //sh 'python3 hello.py'
                 
             }
         }
