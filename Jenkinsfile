@@ -11,8 +11,6 @@ pipeline {
        stage('version2') {
             steps {
                 echo "Building.."
-                sh 'pip install PyPDF2'
-                
             }
         }
         stage('Build') {
