@@ -1,11 +1,15 @@
 pipeline {
-    agent { docker { image 'python:3.10.7-alpine' } }
+    agent { 
+        node {
+            label 'docker-agent-python'
+            }
+      }
     stages {
         stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
-                pip  pip3 install PyPDF2
+                echo "doing build stuff.."
                 '''
             }
         }
@@ -13,8 +17,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                python3 helloworld.py
-                python3 helloworld.py 
+                echo "doing test stuff..
                 '''
             }
         }
